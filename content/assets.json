@@ -1,0 +1,512 @@
+[
+  {
+    "id": "hero-desktop",
+    "purpose": "Home hero (desktop), OG image",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real Angel's bride, ivory/gold saree, plain dark backdrop, space on left",
+    "alt": {
+      "en": "Bride in an ivory and gold Kerala silk saree with jasmine in her hair against a deep burgundy backdrop",
+      "ml": "ബർഗണ്ടി പശ്ചാത്തലത്തിൽ ഐവറി-സ്വർണ്ണ കേരള പട്ടുസാരിയും മുല്ലപ്പൂവും അണിഞ്ഞ വധു"
+    },
+    "src": "/images/hero-desktop.jpg",
+    "width": 415,
+    "height": 247,
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoQAAkAA4BaJaACdAEQg+pV9IgA/vaJ3xvtKnJUaPQuG+vHgdt3OmDBvTV8G6sMABDDXoJUqrXkc70qMAAAAA==",
+    "lowRes": true
+  },
+  {
+    "id": "hero-mobile",
+    "purpose": "Home hero (mobile)",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Vertical version of the hero shoot",
+    "alt": {
+      "en": "Bride in an ivory Kerala silk saree with the pallu flowing above her",
+      "ml": "മുകളിലേക്ക് ഒഴുകുന്ന പല്ലുവോടെ ഐവറി കേരള പട്ടുസാരിയിൽ വധു"
+    },
+    "src": "/images/hero-mobile.jpg",
+    "width": 193,
+    "height": 247,
+    "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZACdLwABGqLfE9JxdxcQAP7uodmABO/nOENIA8O+h8+9b0L+2MtyGJEiPlJ9fzXma+p9RcXv4J16psvRXY3RdgTRAb5IOkA48H/aO5y6h07TOXPJjqdD/ps0d/fWiWGLv67TRbxffCCpGj7cmYg+d1gz8wUqwAA=",
+    "lowRes": true
+  },
+  {
+    "id": "hero-silk-poster",
+    "purpose": "Hero silk fallback texture",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Macro of a real burgundy silk saree",
+    "alt": {
+      "en": "Deep burgundy silk fabric with soft folds",
+      "ml": "മൃദുവായ മടക്കുകളുള്ള ബർഗണ്ടി പട്ടുതുണി"
+    },
+    "src": "/images/hero-silk-poster.jpg",
+    "width": 240,
+    "height": 247,
+    "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAwAgCdASoQABAAA4BaJbACdAEN/gCvMqONwAD+96oSa1hYo5ufk/xmX5A++sg39a/aHM+XrBuLZMUKyVbxjgCwXS4FFPBHzOGv1gAA",
+    "lowRes": true
+  },
+  {
+    "id": "intro-pleats",
+    "purpose": "Home intro; Pre-pleating service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Merlin or Vijisha pleating a client's saree",
+    "alt": {
+      "en": "Hands arranging even pleats on an ivory and gold saree",
+      "ml": "ഐവറി-സ്വർണ്ണ സാരിയിൽ ഞൊറികൾ ഒരുക്കുന്ന കൈകൾ"
+    },
+    "src": "/images/intro-pleats.jpg",
+    "width": 213,
+    "height": 247,
+    "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoQABIAPu1iqU2ppaOiMAgBMB2JZACdAywBTty3DYEVs3/1yAD+g3BMlzh8Ups34KzntD3y9gYNZMUtUKioPnG2E3qaTsagxPwBbwdnIQ6BIvdVU82JfAkrG6LjDY7CaVM6ZZqJmSwA1k2X4jgawAAA",
+    "lowRes": true
+  },
+  {
+    "id": "artistry-consult",
+    "purpose": "Artistry step 1; Group draping",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real consultation at the Manimooly parlour",
+    "alt": {
+      "en": "Stylist and bride choosing silk sarees together at a table",
+      "ml": "സ്റ്റൈലിസ്റ്റും വധുവും ചേർന്ന് പട്ടുസാരികൾ തിരഞ്ഞെടുക്കുന്നു"
+    },
+    "src": "/images/artistry-consult.jpg",
+    "width": 229,
+    "height": 247,
+    "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwBACdASoQABEAPu1iqU2ppaOiMAgBMB2JZgCdMoRwACrqq2iH8Leo8tgA/sb2QsV/U3ptMeXJaLLf4ujz486jh5aFhcc3kAFSaOKL81kbFg94STLG5l8Sz3H6sfMQ10rIuaXtgK+F+jMf0Uge55Rjm4iikt9FcAA=",
+    "lowRes": true
+  },
+  {
+    "id": "artistry-drape",
+    "purpose": "Artistry step 2",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Close-up of real pallu pinning",
+    "alt": {
+      "en": "Stylist pinning the pallu of a burgundy and gold silk saree at the shoulder",
+      "ml": "ബർഗണ്ടി-സ്വർണ്ണ പട്ടുസാരിയുടെ പല്ലു തോളിൽ പിൻ ചെയ്യുന്നു"
+    },
+    "src": "/images/artistry-drape.jpg",
+    "width": 222,
+    "height": 247,
+    "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABwBACdASoQABIAPu1iqU2ppaOiMAgBMB2JbACdMoRwACnT6czvRtt+3YfkcAD9anC+DbeBFUItugDm5FAnzbMotTHi8XlskQvoLr5SKOhE+uw2wu+QP+V0MEhIAX5DrnnUhuLZwpcNU7nHB9R5d1hTYF5+55xkA/++eQvFeAlBORoMflGA4kQjzPTNhku8688yAAAA",
+    "lowRes": true
+  },
+  {
+    "id": "artistry-reveal",
+    "purpose": "Artistry step 3",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Finished look of a real bride",
+    "alt": {
+      "en": "Bride in a pink and gold silk saree turning toward a window",
+      "ml": "ജനലിനരികിലേക്ക് തിരിയുന്ന പിങ്ക്-സ്വർണ്ണ പട്ടുസാരിയിലെ വധു"
+    },
+    "src": "/images/artistry-reveal.jpg",
+    "width": 231,
+    "height": 201,
+    "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAgCdASoQAA4AA4BaJbACdAEVXVCm+8JwQAD+2TvYDOpKSlxbzrcqav/HhYthLc+zgrHweMP5oL/gcSUo664OSp03bMaGn6bSpJlxjcXS9kUrZbvcsSpcB/4br8ww4AA=",
+    "lowRes": true
+  },
+  {
+    "id": "bridal-feature",
+    "purpose": "Home bridal section; Hindu bridal service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Full-length real bridal portrait",
+    "alt": {
+      "en": "Bride in a red and gold Kanjeevaram saree standing in a carved wooden doorway",
+      "ml": "കൊത്തുപണിയുള്ള മരവാതിലിൽ ചുവപ്പ്-സ്വർണ്ണ കാഞ്ചീപുരം സാരിയിൽ വധു"
+    },
+    "src": "/images/bridal-feature.jpg",
+    "width": 246,
+    "height": 201,
+    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQAgCdASoQAA0AA4BaJbACdAEQAvz1HuKQAP7lHpdXoIBPPS2DtWoMI0/lxI0AXqNVKgNlAYnUZZ+gTbcOzFwN0cVsacdiMnh9SGn6HdJ/Fh/7m9ZAAA==",
+    "lowRes": true
+  },
+  {
+    "id": "occasions-feature",
+    "purpose": "Home occasions; Reception service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real reception or party look",
+    "alt": {
+      "en": "Woman in a burgundy silk saree at an evening event",
+      "ml": "സായാഹ്ന ചടങ്ങിൽ ബർഗണ്ടി പട്ടുസാരിയിൽ ഒരു സ്ത്രീ"
+    },
+    "src": "/images/occasions-feature.jpg",
+    "width": 245,
+    "height": 201,
+    "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQAgCdASoQAA0AA4BaJbACdAYsZyiM7YFzXsAA/vQzbMM/h9KKYb1w2KPh+y/OUIhIoRN6uxS6Poo5WBfMwLJ7/dHlrl6PmpBBMTLIdwWRdrf1ckNVjPQF8jpMe2vA88YSdGraWqA5WAAA",
+    "lowRes": true
+  },
+  {
+    "id": "why-detail",
+    "purpose": "Why Angel's",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Macro of a real kasavu border",
+    "alt": {
+      "en": "Gold zari border on an ivory Kerala saree",
+      "ml": "ഐവറി കേരള സാരിയിലെ സ്വർണ്ണ കസവ് കര"
+    },
+    "src": "/images/why-detail.jpg",
+    "width": 252,
+    "height": 201,
+    "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoQAA0AA4BaJbACdAEKVusGeujIAP6x7QeAvH8Fvx4EZ7HHxYmvpLeSAXC+N6kdp9u/4qIEpdfVpCe4SW+9shewu2LKe/lDXZr5ySUAAAA=",
+    "lowRes": true
+  },
+  {
+    "id": "enquiry-bg",
+    "purpose": "Enquiry section",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Still life at the parlour",
+    "alt": {
+      "en": "Ivory saree draped over a wooden chair with jasmine flowers",
+      "ml": "മുല്ലപ്പൂക്കളോടൊപ്പം മരക്കസേരയിൽ വിരിച്ച ഐവറി സാരി"
+    },
+    "src": "/images/enquiry-bg.jpg",
+    "width": 279,
+    "height": 201,
+    "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAQCdASoQAAwAA4BaJagCdACInulXAAD+0NXQOp3jFYmatyahMeFLHC+4ZAn/edoEHFAy4sX0R5Dg7x63jM4cQ+uCiGTQaTWUpaycWUp1WqDDUfw6tlgS2T+9QAAA",
+    "lowRes": true
+  },
+  {
+    "id": "svc-bridal-saree-draping",
+    "purpose": "Bridal saree draping service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real bridal draping close-up",
+    "alt": {
+      "en": "Bride in a red silk saree with layered gold necklaces",
+      "ml": "അടുക്കുകളായ സ്വർണ്ണമാലകളോടെ ചുവന്ന പട്ടുസാരിയിൽ വധു"
+    },
+    "src": "/images/svc-bridal-saree-draping.jpg",
+    "width": 259,
+    "height": 201,
+    "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwAgCdASoQAA0AA4BaJbACdAENnLVf/iM2AAD+95sc3rgzBfmq8EWoY4dwB8rIh69Q0VNUQWTBhJ0MJFHje5exjoYjnhASi4MO6XjzC0Gztba0ouEPCPV3BFmjUpGKm52aAA==",
+    "lowRes": true
+  },
+  {
+    "id": "svc-kanjeevaram-bridal",
+    "purpose": "Kanjeevaram bridal service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real Kanjeevaram bride",
+    "alt": {
+      "en": "Bride in a magenta and gold Kanjeevaram saree beside a brass lamp",
+      "ml": "ഓട്ടുവിളക്കിനരികിൽ മജന്ത-സ്വർണ്ണ കാഞ്ചീപുരം സാരിയിൽ വധു"
+    },
+    "src": "/images/svc-kanjeevaram-bridal.jpg",
+    "width": 242,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAsAA4BaJbACdADHc14sEbAA9rdCKgQ7qkWm2FxPSQptypIYI02REPJs4xJPjgPaD+JGPlZl7V/EYBOhjn2XF9VU7Es8da8+l/ewAAA=",
+    "lowRes": true
+  },
+  {
+    "id": "svc-kerala-kasavu",
+    "purpose": "Kerala kasavu draping service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real kasavu draping",
+    "alt": {
+      "en": "Woman in an ivory Kerala kasavu saree with jasmine in her hair",
+      "ml": "മുല്ലപ്പൂ ചൂടി ഐവറി കസവ് സാരിയിൽ ഒരു സ്ത്രീ"
+    },
+    "src": "/images/svc-kerala-kasavu.jpg",
+    "width": 266,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoQAAoAA4BaJZACdADJ8fTDTNRSAAD+6huRS3BPCE8p/LUi9/V287iLTmtzFiFjvhRLsK59T5Ev0R3YA736SIXdDN65wjuSTFTsa+Vs9Nxbew9a7vhb1pjXSkF8mMAA",
+    "lowRes": true
+  },
+  {
+    "id": "svc-saree-styling",
+    "purpose": "Special occasion service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real occasion styling detail",
+    "alt": {
+      "en": "Shoulder detail of a burgundy silk saree with gold motifs",
+      "ml": "സ്വർണ്ണ ചിത്രപ്പണിയുള്ള ബർഗണ്ടി പട്ടുസാരിയുടെ തോൾഭാഗം"
+    },
+    "src": "/images/svc-saree-styling.jpg",
+    "width": 255,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQAAoAA4BaJbACdAD7A9fj9wGAAP72lAJBeA/3Enhg2Yzfu4ptTKBaK+wHHXjQCfPD9S+yskmTCjyklk8zV8V9j0BFZiFJO/flhBHN4G7U3tG7oiBAAA==",
+    "lowRes": true
+  },
+  {
+    "id": "svc-bridal-makeup",
+    "purpose": "Bridal makeup service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Merlin doing real bridal makeup",
+    "alt": {
+      "en": "Makeup artist applying soft blush to a bride with jasmine in her hair",
+      "ml": "മുല്ലപ്പൂ ചൂടിയ വധുവിന് മേക്കപ്പ് ചെയ്യുന്നു"
+    },
+    "src": "/images/svc-bridal-makeup.jpg",
+    "width": 260,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoQAAoAA4BaJbACdADC7DcYgAD+3bFwVPq/msv4AUnB0IUhJXSvC2LxrIMqydOhlyphYyZiJMMgMDnIVtudinyXoOkbk/dx+xNIeoWa/dgnGefWQidkIdBvyAAAAA==",
+    "lowRes": true
+  },
+  {
+    "id": "svc-hair-styling",
+    "purpose": "Hair styling service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real bridal hairstyle from behind",
+    "alt": {
+      "en": "Bridal bun decorated with jasmine flowers",
+      "ml": "മുല്ലപ്പൂ കൊണ്ട് അലങ്കരിച്ച വധുവിന്റെ കൊണ്ട"
+    },
+    "src": "/images/svc-hair-styling.jpg",
+    "width": 241,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAsAA4BaJaACdADG78nG/lAAAP6NP5bXOTE8Jj227ERupikNR6htcumTpskNrM4j7KtBzhuDc8v/QxXTtx0MC3YlpNckrIdLNtisKmjZaK28AAA=",
+    "lowRes": true
+  },
+  {
+    "id": "svc-accessories",
+    "purpose": "Lehenga & dupatta service; lookbook",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real bridal jewellery detail",
+    "alt": {
+      "en": "Gold temple necklace with green stones over a silk saree",
+      "ml": "പട്ടുസാരിക്ക് മുകളിൽ പച്ചക്കല്ലുള്ള സ്വർണ്ണ ടെമ്പിൾ മാല"
+    },
+    "src": "/images/svc-accessories.jpg",
+    "width": 248,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQAgCdASoQAAoAA4BaJbACdAECwXZqZGTZPhAA/vK4VBAxEE7LM8+cgLftCWkhu5Js6Wm/1DBw/Eca0DVH6+HI1W/4iV4XO87lYC5bfb6c6HdbtLMu30MjSwAAAA==",
+    "lowRes": true
+  },
+  {
+    "id": "svc-bridal-consultation",
+    "purpose": "Custom styling service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real consultation",
+    "alt": {
+      "en": "Stylist and bride looking through a styling book together",
+      "ml": "സ്റ്റൈലിസ്റ്റും വധുവും ഒരുമിച്ച് സ്റ്റൈലിംഗ് ബുക്ക് നോക്കുന്നു"
+    },
+    "src": "/images/svc-bridal-consultation.jpg",
+    "width": 269,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwAgCdASoQAAoAA4BaJZgCdAYvM9uGnp5JQAD9vw96w1s0JpuzbUSSabZws4wZE7Q5RSIXh2qzndxbQDi0WrIJWotGJx/7VbDjLgOSnoViZkce0YVxZZGF70ik0Gu3O0AAAA==",
+    "lowRes": true
+  },
+  {
+    "id": "svc-bridal-package",
+    "purpose": "Christian bridal service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real Christian bride in ivory and gold",
+    "alt": {
+      "en": "Bride in an ivory and gold saree walking along a pillared corridor",
+      "ml": "തൂണുകളുള്ള ഇടനാഴിയിലൂടെ നടക്കുന്ന ഐവറി-സ്വർണ്ണ സാരിയിലെ വധു"
+    },
+    "src": "/images/svc-bridal-package.jpg",
+    "width": 256,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoQAAoAA4BaJZACdACzWKM/0PAA/k124cB1IbbQ27HKezrOAJZc1NJfbg076ipQEl3F207+W4YJ6QdOFlGUjTKSyV6aK1APxhrTtwDZQJ5oAAAA",
+    "lowRes": true
+  },
+  {
+    "id": "lookbook-01",
+    "purpose": "Lookbook",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real sarees from a client fitting",
+    "alt": {
+      "en": "Folded Kanjeevaram silk sarees in burgundy and gold",
+      "ml": "മടക്കിവെച്ച ബർഗണ്ടി-സ്വർണ്ണ കാഞ്ചീപുരം പട്ടുസാരികൾ"
+    },
+    "src": "/images/lookbook-01.jpg",
+    "width": 271,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwAgCdASoQAAoAA4BaJagCdAEUWe5Sax8EQAD+o3/O9Gojyt+21cCVPAAg468qALUS1mrsXTmgitbkegb+alspzFSGXGM7N+xkhl+27D30EnIBc+8qS/oTE+UAAA==",
+    "lowRes": true
+  },
+  {
+    "id": "lookbook-02",
+    "purpose": "Lookbook; wedding guest",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real kasavu portrait",
+    "alt": {
+      "en": "Woman in an ivory kasavu saree seated by a window",
+      "ml": "ജനലരികിൽ ഇരിക്കുന്ന ഐവറി കസവ് സാരിയിലെ സ്ത്രീ"
+    },
+    "src": "/images/lookbook-02.jpg",
+    "width": 257,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAQCdASoQAAoAA4BaJZACdAC5rmT+EgAA/vM26jPN76W1wwMZdtx7GvsgAoiZB4X0P0OK+U+KoyLfi+Ccm+IdqlwFkQmLHBSviKKW8QbTZPzxix+6eNh1+vS26b6WAAA=",
+    "lowRes": true
+  },
+  {
+    "id": "lookbook-03",
+    "purpose": "Lookbook; Muslim bridal service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real saree detail",
+    "alt": {
+      "en": "Burgundy and gold silk saree draped over a carved chair",
+      "ml": "കൊത്തുപണിയുള്ള കസേരയിൽ വിരിച്ച ബർഗണ്ടി-സ്വർണ്ണ പട്ടുസാരി"
+    },
+    "src": "/images/lookbook-03.jpg",
+    "width": 243,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoQAAsAA4BaJbACdAEKbOPgJgAA/vRa2xSeoCkjm4MfNnC06tejDA3jJW4NrtuEq3ffv76HGvtR0ANPs1B1CwYL00BTWg/gFpWAIBRsdSY14WL3Yow8ZAAA",
+    "lowRes": true
+  },
+  {
+    "id": "lookbook-04",
+    "purpose": "Lookbook; wedding guest service",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Real guest styling",
+    "alt": {
+      "en": "Woman in a burgundy silk saree smiling by a window",
+      "ml": "ജനലരികിൽ പുഞ്ചിരിക്കുന്ന ബർഗണ്ടി പട്ടുസാരിയിലെ സ്ത്രീ"
+    },
+    "src": "/images/lookbook-04.jpg",
+    "width": 216,
+    "height": 167,
+    "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAAwAA4BaJZgCdAEKiAEsWAAA/u6guO0gqVsH14EdJD+8wAYX4uFwQ1lVLN1/TCMaS29B0h/QT3rHpMDkmncvkI9Q/XdjqAJOVtiCcDNFvYKOAAA=",
+    "lowRes": true
+  },
+  {
+    "id": "insta-01",
+    "purpose": "Instagram grid",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Recent Instagram post",
+    "alt": {
+      "en": "Back view of a bridal bun with jasmine",
+      "ml": "മുല്ലപ്പൂ ചൂടിയ കൊണ്ടയുടെ പിൻകാഴ്ച"
+    },
+    "src": "/images/insta-01.jpg",
+    "width": 209,
+    "height": 203,
+    "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAQCdASoQAA8AA4BaJagCdAD5PGnFVAAA/qrckDm3xVcLps2MzTGE2+U1uUumKxV70cYC509Aa5WQpbvocVt9nofG0XcK+GwAXK7zcX8sT0jE4QUkJHOYLBTyBgzT7lKIAA==",
+    "lowRes": true
+  },
+  {
+    "id": "insta-02",
+    "purpose": "Instagram grid",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Recent Instagram post",
+    "alt": {
+      "en": "Gold jhumka earrings on a brass plate with jasmine",
+      "ml": "മുല്ലപ്പൂവിനൊപ്പം ഓട്ടുതാലത്തിൽ സ്വർണ്ണ ജിമിക്കി"
+    },
+    "src": "/images/insta-02.jpg",
+    "width": 193,
+    "height": 203,
+    "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADQAwCdASoQABEAPu1iqU2ppaOiMAgBMB2JZACdACErEy7kXVq3uLAA/ZwBMUnu/xVDomx1tMalhkOIY7Y/tpS4RTIHTSijt+tMGseo1cz7M2OBeyhLuJG7wQocxuqtLSaHfwa7crss7uIXVxb+WOS4AAA=",
+    "lowRes": true
+  },
+  {
+    "id": "insta-03",
+    "purpose": "Instagram grid",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Recent Instagram post",
+    "alt": {
+      "en": "Folded ivory saree with a wide gold kasavu border",
+      "ml": "വീതിയുള്ള കസവ് കരയുള്ള മടക്കിയ ഐവറി സാരി"
+    },
+    "src": "/images/insta-03.jpg",
+    "width": 205,
+    "height": 203,
+    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoQABAAA4BaJbACdADOeMDEswAA97srMqDaJh2lPN9x/e4LV8MPgyxqRAMf26IpKv/OeNULAc7JXdst9AJ3Yf122Q4rlnPBMFsVbO0VExEAAA==",
+    "lowRes": true
+  },
+  {
+    "id": "insta-04",
+    "purpose": "Instagram grid",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Recent Instagram post",
+    "alt": {
+      "en": "Hands with gold bangles resting on a silk saree",
+      "ml": "പട്ടുസാരിയിൽ വെച്ച സ്വർണ്ണവളയിട്ട കൈകൾ"
+    },
+    "src": "/images/insta-04.jpg",
+    "width": 216,
+    "height": 203,
+    "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQAA8AA4BaJbACdAC3oDApn7QAAP7Q5RrKKqfKPdG/xOeyikmHS1mqjxwfu/W04BtzHIxLkgPHBKg0LBKV1Vj4lz/RXZUPCD6+8obLem+LuxEUyQAAAA==",
+    "lowRes": true
+  },
+  {
+    "id": "insta-05",
+    "purpose": "Instagram grid",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Recent Instagram post",
+    "alt": {
+      "en": "Burgundy silk saree with gold woven motifs",
+      "ml": "സ്വർണ്ണ നെയ്ത്തുള്ള ബർഗണ്ടി പട്ടുസാരി"
+    },
+    "src": "/images/insta-05.jpg",
+    "width": 219,
+    "height": 203,
+    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAwAgCdASoQAA8AA4BaJbACdAEDpRKCyx3DYAD+9sp4xIjLcMQH6bEyaK4LpER51vvGyLtVG3FGHAXxpHBtGTy63Nf5LgPVBgGR2t1L9Q93qTtX2YAAAA==",
+    "lowRes": true
+  },
+  {
+    "id": "insta-06",
+    "purpose": "Instagram grid",
+    "type": "illustrative",
+    "source": "AI-generated, supplied by client (Nov 2026)",
+    "licence": "Confirm generator terms allow commercial use",
+    "replace": "Recent Instagram post",
+    "alt": {
+      "en": "Jasmine flowers floating in a brass bowl",
+      "ml": "ഓട്ടുപാത്രത്തിൽ മുല്ലപ്പൂക്കൾ"
+    },
+    "src": "/images/insta-06.jpg",
+    "width": 200,
+    "height": 203,
+    "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwAgCdASoQABAAA4BaJaACdAEK1uJzqz3AAAD+FxGakJK8bpUGszQJ6F1wl+DFAjWMa5ON3F3gnP4zhAgOXtCaJc/FR9GUyMoKy0GZg9WR8ygQZu/2Nly+33XFzRJNXO52rXriugAAAA==",
+    "lowRes": true
+  }
+]
