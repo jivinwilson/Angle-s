@@ -2,7 +2,7 @@ import type { L } from "@/lib/i18n";
 
 export type ServiceGroup = "bridal" | "traditional" | "occasion" | "preparation" | "beauty" | "bespoke";
 
-export type Service = {
+export type ServiceSeed = {
   slug: string;
   group: ServiceGroup;
   image: string;
@@ -14,16 +14,33 @@ export type Service = {
   keywords: string[];
 };
 
+export type Service = ServiceSeed & { priceFrom: number; showPrice: boolean; seo: { title: L; description: L } };
+
+export const blankService: Service = {
+  slug: "",
+  group: "bridal",
+  image: "svc-bridal-saree-draping",
+  visible: true,
+  name: { en: "", ml: "" },
+  short: { en: "", ml: "" },
+  intro: { en: "", ml: "" },
+  includes: { en: [], ml: [] },
+  keywords: [],
+  priceFrom: 0,
+  showPrice: true,
+  seo: { title: { en: "", ml: "" }, description: { en: "", ml: "" } },
+};
+
 export const groups: Record<ServiceGroup, L> = {
   bridal: { en: "Bridal", ml: "ബ്രൈഡൽ" },
+  beauty: { en: "Makeup & Hair", ml: "മേക്കപ്പ് & ഹെയർ" },
   traditional: { en: "Traditional", ml: "പരമ്പരാഗതം" },
   occasion: { en: "Occasions", ml: "ആഘോഷങ്ങൾ" },
   preparation: { en: "Preparation", ml: "ഒരുക്കം" },
-  beauty: { en: "Beauty", ml: "സൗന്ദര്യം" },
   bespoke: { en: "Bespoke", ml: "പ്രത്യേകം" },
 };
 
-export const services: Service[] = [
+export const services: ServiceSeed[] = [
   {
     slug: "bridal-saree-draping",
     group: "bridal",
@@ -263,6 +280,57 @@ export const services: Service[] = [
     keywords: ["bridal hairstyle Kerala", "bridal hair styling Nilambur"],
   },
   {
+    slug: "engagement-reception-makeup",
+    group: "beauty",
+    image: "occasions-feature",
+    visible: true,
+    name: { en: "Engagement & Reception Makeup", ml: "നിശ്ചയം & റിസപ്ഷൻ മേക്കപ്പ്" },
+    short: { en: "A softer, evening-ready look for the celebrations around your wedding.", ml: "വിവാഹത്തിന് ചുറ്റുമുള്ള ആഘോഷങ്ങൾക്ക് മൃദുവായ, സന്ധ്യയ്ക്കിണങ്ങുന്ന ലുക്ക്." },
+    intro: {
+      en: "Your engagement and reception call for a different mood from the wedding itself. We plan makeup and hair around your outfit, the venue lighting and the time of day — fresh for a daytime engagement, richer for an evening reception.",
+      ml: "നിശ്ചയത്തിനും റിസപ്ഷനും വിവാഹദിനത്തിൽ നിന്ന് വ്യത്യസ്തമായ ഒരു ഭാവമാണ്. വസ്ത്രം, വേദിയിലെ വെളിച്ചം, സമയം എന്നിവ നോക്കി ഞങ്ങൾ മേക്കപ്പും ഹെയറും ഒരുക്കുന്നു — പകൽ നിശ്ചയത്തിന് ഫ്രഷ് ആയി, സന്ധ്യാ റിസപ്ഷന് കൂടുതൽ സമ്പന്നമായി.",
+    },
+    includes: {
+      en: ["Makeup planned for your outfit and venue lighting", "Hair styling to match the look", "Saree or lehenga draping on request"],
+      ml: ["വസ്ത്രത്തിനും വേദിയിലെ വെളിച്ചത്തിനും ഇണങ്ങുന്ന മേക്കപ്പ്", "ലുക്കിന് ചേരുന്ന ഹെയർ സ്റ്റൈലിംഗ്", "ആവശ്യമെങ്കിൽ സാരി അല്ലെങ്കിൽ ലെഹങ്ക ഡ്രേപ്പിംഗ്"],
+    },
+    keywords: ["engagement makeup Kerala", "reception makeup Nilambur"],
+  },
+  {
+    slug: "party-function-makeup",
+    group: "beauty",
+    image: "lookbook-04",
+    visible: true,
+    name: { en: "Party & Function Makeup", ml: "പാർട്ടി & ഫംഗ്ഷൻ മേക്കപ്പ്" },
+    short: { en: "Polished makeup for church functions, family celebrations and parties.", ml: "പള്ളിച്ചടങ്ങുകൾക്കും കുടുംബാഘോഷങ്ങൾക്കും പാർട്ടികൾക്കും ഭംഗിയുള്ള മേക്കപ്പ്." },
+    intro: {
+      en: "Not the bride, but still part of the day. Whether it is a church function, a family wedding or a festive evening, we create makeup that looks natural in person and beautiful in photographs.",
+      ml: "വധുവല്ലെങ്കിലും ആ ദിവസത്തിന്റെ ഭാഗം തന്നെ. പള്ളിച്ചടങ്ങോ കുടുംബവിവാഹമോ ആഘോഷസന്ധ്യയോ ആകട്ടെ — നേരിൽ സ്വാഭാവികമായും ഫോട്ടോകളിൽ മനോഹരമായും തോന്നുന്ന മേക്കപ്പ് ഞങ്ങൾ ഒരുക്കുന്നു.",
+    },
+    includes: {
+      en: ["Makeup for guests, family and special occasions", "Hair styling on request", "Saree draping to complete the look"],
+      ml: ["അതിഥികൾക്കും കുടുംബത്തിനും വിശേഷാവസരങ്ങൾക്കും മേക്കപ്പ്", "ആവശ്യമെങ്കിൽ ഹെയർ സ്റ്റൈലിംഗ്", "ലുക്ക് പൂർത്തിയാക്കാൻ സാരി ഡ്രേപ്പിംഗ്"],
+    },
+    keywords: ["party makeup Nilambur", "function makeup Malappuram"],
+  },
+  {
+    slug: "family-group-makeup",
+    group: "beauty",
+    image: "svc-bridal-consultation",
+    visible: true,
+    name: { en: "Family & Bridesmaid Makeup", ml: "കുടുംബ & ബ്രൈഡ്സ്മെയ്ഡ് മേക്കപ്പ്" },
+    short: { en: "The bride's mother, sisters and bridesmaids — styled to look beautiful together.", ml: "വധുവിന്റെ അമ്മയും സഹോദരിമാരും ബ്രൈഡ്സ്മെയ്ഡുകളും — ഒരുമിച്ച് മനോഹരമായി." },
+    intro: {
+      en: "When the whole family is in the photographs, the looks should belong together. We plan makeup for the bride's family and bridesmaids alongside the bridal look, and schedule everyone so the morning runs calmly.",
+      ml: "കുടുംബം മുഴുവൻ ഫോട്ടോകളിൽ ഉള്ളപ്പോൾ ലുക്കുകൾ പരസ്പരം ഇണങ്ങണം. വധുവിന്റെ ലുക്കിനൊപ്പം കുടുംബത്തിനും ബ്രൈഡ്സ്മെയ്ഡുകൾക്കുമുള്ള മേക്കപ്പ് ഞങ്ങൾ ആസൂത്രണം ചെയ്യുന്നു; പ്രഭാതം ശാന്തമായി നീങ്ങും വിധം എല്ലാവരുടെയും സമയം ക്രമീകരിക്കുന്നു.",
+    },
+    includes: {
+      en: ["Makeup for the bride's family and bridesmaids", "Looks coordinated with the bridal styling", "Timing planned around the ceremony"],
+      ml: ["വധുവിന്റെ കുടുംബത്തിനും ബ്രൈഡ്സ്മെയ്ഡുകൾക്കും മേക്കപ്പ്", "ബ്രൈഡൽ സ്റ്റൈലിംഗുമായി ഇണങ്ങുന്ന ലുക്കുകൾ", "ചടങ്ങിനനുസരിച്ച് സമയക്രമം"],
+    },
+    keywords: ["bridesmaid makeup Kerala", "family makeup wedding Nilambur"],
+  },
+  {
     slug: "custom-styling",
     group: "bespoke",
     image: "svc-bridal-consultation",
@@ -281,5 +349,3 @@ export const services: Service[] = [
   },
 ];
 
-export const visibleServices = services.filter((s) => s.visible);
-export const getService = (slug: string) => visibleServices.find((s) => s.slug === slug);

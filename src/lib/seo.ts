@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
-import { site } from "@content/site";
+import { siteUrl } from "@content/site";
 import type { Service } from "@content/services";
-import { asset } from "./assets";
+import { getContent, type Content } from "./content";
 import { href, type Locale } from "./i18n";
 
-export const abs = (path: string) => new URL(path, site.url).toString();
+export const abs = (path: string) => new URL(path, siteUrl).toString();
 
-export function pageMeta(locale: Locale, path: string, title: string, description: string, imageId = "hero-desktop"): Metadata {
-  const img = asset(imageId);
+type Page = keyof Content["seo"]["pages"];
+
+export async function pageMeta(locale: Locale, path: string, title: string, description: string, imageId = "hero-desktop"): Promise<Metadata> {
+  const c = await getContent();
+  const img = c.asset(imageId);
   const url = href(locale, path);
   return {
     title,
@@ -18,7 +21,7 @@ export function pageMeta(locale: Locale, path: string, title: string, descriptio
     },
     openGraph: {
       type: "website",
-      siteName: site.name,
+      siteName: c.site.name,
       locale: locale === "en" ? "en_IN" : "ml_IN",
       url,
       title,
@@ -29,8 +32,14 @@ export function pageMeta(locale: Locale, path: string, title: string, descriptio
   };
 }
 
-export function businessLd(locale: Locale) {
-  const img = asset("hero-desktop");
+export async function pageSeo(locale: Locale, page: Page, path: string) {
+  const p = (await getContent()).seo.pages[page];
+  return pageMeta(locale, path, p.title[locale], p.description[locale], p.image);
+}
+
+export function businessLd(c: Content, locale: Locale) {
+  const img = c.asset("hero-desktop");
+  const { site } = c;
   return {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
@@ -70,6 +79,10 @@ export function serviceLd(s: Service, locale: Locale) {
     url: abs(href(locale, `/services/${s.slug}`)),
     provider: { "@id": abs("/#business") },
     areaServed: { "@type": "State", name: "Kerala" },
+    offers:
+      s.showPrice && s.priceFrom > 0
+        ? { "@type": "Offer", priceCurrency: "INR", priceSpecification: { "@type": "PriceSpecification", minPrice: s.priceFrom, priceCurrency: "INR" } }
+        : undefined,
   };
 }
 

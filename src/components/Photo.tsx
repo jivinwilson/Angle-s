@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { asset } from "@/lib/assets";
+import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/i18n";
 import { Monogram } from "./Wordmark";
 
@@ -13,8 +13,8 @@ type Props = {
   position?: string;
 };
 
-export function Photo({ id, locale, sizes, className = "", imgClassName = "", priority, position }: Props) {
-  const a = asset(id);
+export async function Photo({ id, locale, sizes, className = "", imgClassName = "", priority, position }: Props) {
+  const a = (await getContent()).asset(id);
   return (
     <div className={`${className.includes("absolute") ? "" : "relative"} overflow-hidden bg-beige ${className}`}>
       {a.src ? (

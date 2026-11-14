@@ -1,21 +1,22 @@
 import Link from "next/link";
 import { href, type Locale } from "@/lib/i18n";
 import { telUrl, waUrl } from "@/lib/contact";
-import { site } from "@content/site";
-import { copy } from "@content/copy";
-import { visibleServices } from "@content/services";
+import { getContent } from "@/lib/content";
 import { Wordmark } from "./Wordmark";
 import { InstagramIcon, PhoneIcon, WhatsAppIcon } from "./icons";
 
-export function Footer({ locale }: { locale: Locale }) {
-  const t = copy[locale];
-  const featured = visibleServices.filter((s) => ["bridal", "traditional", "beauty"].includes(s.group)).slice(0, 6);
+export async function Footer({ locale }: { locale: Locale }) {
+  const c = await getContent();
+  const { site } = c;
+  const t = c.t(locale);
+  const pick = (g: string) => c.visibleServices.filter((s) => s.group === g).slice(0, 3);
+  const featured = [...pick("beauty"), ...pick("bridal")];
   return (
     <footer className="bg-burgundy-deep pb-24 text-ivory/85 md:pb-0">
       <div className="gutter grid gap-14 py-20 md:grid-cols-12 md:py-28">
         <div className="md:col-span-4">
           <Link href={href(locale)} aria-label="Angel's — home" className="text-xl text-ivory">
-            <Wordmark tagline="Bridal · Draping · Beauty" />
+            <Wordmark tagline="Bridal Makeup · Saree Draping" />
           </Link>
           <p className="display mt-10 max-w-xs text-2xl text-ivory/90">{site.tagline[locale]}</p>
         </div>
@@ -51,10 +52,10 @@ export function Footer({ locale }: { locale: Locale }) {
         </div>
 
         <div className="space-y-4 md:col-span-2">
-          <a href={waUrl(t.whatsapp.generic)} target="_blank" rel="noopener" data-track="whatsapp" className="flex items-center gap-3 transition-colors hover:text-gold">
+          <a href={waUrl(site.whatsapp, t.whatsapp.generic)} target="_blank" rel="noopener" data-track="whatsapp" className="flex items-center gap-3 transition-colors hover:text-gold">
             <WhatsAppIcon className="size-4" /> WhatsApp
           </a>
-          <a href={telUrl} data-track="call" className="flex items-center gap-3 transition-colors hover:text-gold">
+          <a href={telUrl(site.phone)} data-track="call" className="flex items-center gap-3 transition-colors hover:text-gold">
             <PhoneIcon className="size-4" /> {site.phoneDisplay}
           </a>
           <a href={site.instagram.url} target="_blank" rel="noopener" className="flex items-center gap-3 transition-colors hover:text-gold">

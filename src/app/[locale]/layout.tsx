@@ -4,11 +4,12 @@ import Script from "next/script";
 import { Cormorant_Garamond, Jost, Noto_Serif_Malayalam, Manjari } from "next/font/google";
 import { isLocale, localeParams } from "@/lib/i18n";
 import { businessLd } from "@/lib/seo";
-import { site } from "@content/site";
-import { copy } from "@content/copy";
+import { siteUrl } from "@content/site";
+import { getContent } from "@/lib/content";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactBar } from "@/components/ContactBar";
+import { SiteProvider } from "@/components/CallLink";
 import { Motion } from "@/components/Motion";
 import { JsonLd } from "@/components/JsonLd";
 import "../globals.css";
@@ -21,22 +22,26 @@ const mlSans = Manjari({ subsets: ["malayalam"], weight: ["400", "700"], variabl
 export const dynamicParams = false;
 export const generateStaticParams = localeParams;
 
-export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  title: { default: "Angel's — Bridal Saree Draping & Makeup, Nilambur, Kerala", template: "%s · Angel's" },
-  applicationName: site.name,
-  verification: {
-    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
-    other: process.env.NEXT_PUBLIC_BING_VERIFICATION ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION } : undefined,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { seo, site } = await getContent();
+  const google = seo.verification.google || process.env.NEXT_PUBLIC_GSC_VERIFICATION;
+  const bing = seo.verification.bing || process.env.NEXT_PUBLIC_BING_VERIFICATION;
+  return {
+    metadataBase: new URL(siteUrl),
+    title: { default: seo.defaultTitle, template: `%s · ${site.name}` },
+    applicationName: site.name,
+    verification: { google, other: bing ? { "msvalidate.01": bing } : undefined },
+  };
+}
 
 export const viewport: Viewport = { themeColor: "#541b2b" };
 
 export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const t = copy[locale];
+  const c = await getContent();
+  const t = c.t(locale);
+  const b = c.banner;
 
   return (
     <html lang={locale} className={`${cormorant.variable} ${jost.variable} ${mlSerif.variable} ${mlSans.variable}`} suppressHydrationWarning>
@@ -45,12 +50,19 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-ivory focus:px-4 focus:py-2">
           {t.skip}
         </a>
-        <Header locale={locale} t={{ nav: t.nav, cta: t.cta, language: t.language, waText: t.whatsapp.generic }} />
-        <main id="main">{children}</main>
-        <Footer locale={locale} />
-        <ContactBar waText={t.whatsapp.generic} whatsapp={t.cta.whatsappShort} call={t.cta.callShort} />
+        <SiteProvider value={{ whatsapp: c.site.whatsapp, phone: c.site.phone, callHours: c.site.callHours }}>
+          <Header
+            locale={locale}
+            t={{ nav: t.nav, cta: t.cta, language: t.language, waText: t.whatsapp.generic }}
+            instagram={c.site.instagram}
+            banner={b.show && b.text[locale] ? { text: b.text[locale], link: b.link, linkLabel: b.linkLabel[locale] } : null}
+          />
+          <main id="main">{children}</main>
+          <Footer locale={locale} />
+          <ContactBar waText={t.whatsapp.generic} whatsapp={t.cta.whatsappShort} call={t.cta.callShort} />
+        </SiteProvider>
         <Motion />
-        <JsonLd data={businessLd(locale)} />
+        <JsonLd data={businessLd(c, locale)} />
       </body>
     </html>
   );

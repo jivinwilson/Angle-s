@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { btn } from "@/components/ui";
-import { copy } from "@content/copy";
+import { getContent } from "@/lib/content";
 
-export default function NotFound() {
-  const t = copy.en.notFound;
+export default async function NotFound() {
+  const t = (await getContent()).t("en").notFound;
   return (
     <section className="gutter flex min-h-[80svh] flex-col items-start justify-center pt-24">
       <p className="eyebrow text-gold-muted">404</p>

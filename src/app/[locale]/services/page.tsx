@@ -1,26 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { href, type Locale } from "@/lib/i18n";
-import { pageMeta } from "@/lib/seo";
-import { copy } from "@content/copy";
-import { groups, visibleServices, type ServiceGroup } from "@content/services";
+import { pageSeo } from "@/lib/seo";
+import { fill } from "@/lib/contact";
+import { formatPrice, getContent } from "@/lib/content";
+import { groups, type ServiceGroup } from "@content/services";
 import { Photo } from "@/components/Photo";
 import { Breadcrumbs, PageIntro } from "@/components/page";
 import { Enquiry } from "@/components/home";
 
-const meta = {
-  en: { title: "Bridal Saree Draping, Makeup & Styling Services", description: "Bridal saree draping, Kanjeevaram and Kerala kasavu draping, reception and occasion styling, pre-pleating, bridal makeup and hair — Angel's, Nilambur, Kerala." },
-  ml: { title: "ബ്രൈഡൽ സാരി ഡ്രേപ്പിംഗ്, മേക്കപ്പ്, സ്റ്റൈലിംഗ് സേവനങ്ങൾ", description: "ബ്രൈഡൽ സാരി ഡ്രേപ്പിംഗ്, കാഞ്ചീപുരം, കേരള കസവ്, റിസപ്ഷൻ സ്റ്റൈലിംഗ്, പ്രീ-പ്ലീറ്റിംഗ്, ബ്രൈഡൽ മേക്കപ്പ്, ഹെയർ — Angel's, നിലമ്പൂർ." },
-};
-
 export async function generateMetadata({ params }: PageProps<"/[locale]/services">): Promise<Metadata> {
   const locale = (await params).locale as Locale;
-  return pageMeta(locale, "/services", meta[locale].title, meta[locale].description, "bridal-feature");
+  return pageSeo(locale, "services", "/services");
 }
 
 export default async function Services({ params }: PageProps<"/[locale]/services">) {
   const locale = (await params).locale as Locale;
-  const t = copy[locale];
+  const c = await getContent();
+  const t = c.t(locale);
+  const visibleServices = c.visibleServices;
   const grouped = (Object.keys(groups) as ServiceGroup[]).map((g) => ({ g, list: visibleServices.filter((s) => s.group === g) })).filter((x) => x.list.length);
 
   return (
@@ -45,6 +43,7 @@ export default async function Services({ params }: PageProps<"/[locale]/services
                     </div>
                     <h3 className="display mt-6 text-[2rem] leading-tight text-burgundy">{s.name[locale]}</h3>
                     <p className="mt-2 text-charcoal/75">{s.short[locale]}</p>
+                    {s.showPrice && s.priceFrom > 0 && <p className="mt-3 text-sm font-medium text-burgundy">{fill(t.services.priceFrom, { price: formatPrice(s.priceFrom) })}</p>}
                     <span className="eyebrow mt-4 inline-block text-gold-muted transition-colors group-hover:text-burgundy">{t.cta.learnMore} →</span>
                   </Link>
                 </li>

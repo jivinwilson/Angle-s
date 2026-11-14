@@ -3,32 +3,39 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { href, locales, type Locale } from "@/lib/i18n";
 import { pageMeta, serviceLd } from "@/lib/seo";
-import { copy } from "@content/copy";
-import { getService, visibleServices } from "@content/services";
+import { fill } from "@/lib/contact";
+import { formatPrice, getContent } from "@/lib/content";
 import { Photo } from "@/components/Photo";
 import { Breadcrumbs } from "@/components/page";
 import { JsonLd } from "@/components/JsonLd";
-import { CallLink } from "@/components/CallLink";
+import { CallLink, WhatsAppButton } from "@/components/CallLink";
 import { Enquiry, serviceWaText } from "@/components/home";
-import { WhatsAppButton, btn, Thread } from "@/components/ui";
+import { btn, Thread } from "@/components/ui";
 
-export const dynamicParams = false;
-export const generateStaticParams = () => locales.flatMap((locale) => visibleServices.map((s) => ({ locale, slug: s.slug })));
+export const dynamicParams = true;
+export async function generateStaticParams() {
+  const { visibleServices } = await getContent();
+  return locales.flatMap((locale) => visibleServices.map((s) => ({ locale, slug: s.slug })));
+}
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/services/[slug]">): Promise<Metadata> {
   const { locale, slug } = (await params) as { locale: Locale; slug: string };
-  const s = getService(slug);
+  const c = await getContent();
+  const s = c.service(slug);
   if (!s) return {};
   const where = locale === "en" ? " — Nilambur, Kerala" : " — നിലമ്പൂർ, കേരളം";
-  return pageMeta(locale, `/services/${slug}`, `${s.name[locale]}${where}`, `${s.short[locale]} ${copy[locale].services.whereValue}`.slice(0, 158), s.image);
+  const title = s.seo.title[locale] || `${s.name[locale]}${where}`;
+  const description = s.seo.description[locale] || `${s.short[locale]} ${c.t(locale).services.whereValue}`.slice(0, 158);
+  return pageMeta(locale, `/services/${slug}`, title, description, s.image);
 }
 
 export default async function ServicePage({ params }: PageProps<"/[locale]/services/[slug]">) {
   const { locale, slug } = (await params) as { locale: Locale; slug: string };
-  const s = getService(slug);
+  const c = await getContent();
+  const s = c.service(slug);
   if (!s) notFound();
-  const t = copy[locale];
-  const related = visibleServices.filter((x) => x.slug !== s.slug && (x.group === s.group || x.group === "beauty")).slice(0, 3);
+  const t = c.t(locale);
+  const related = c.visibleServices.filter((x) => x.slug !== s.slug && (x.group === s.group || x.group === "beauty")).slice(0, 3);
 
   return (
     <>
@@ -48,9 +55,12 @@ export default async function ServicePage({ params }: PageProps<"/[locale]/servi
           />
           <h1 className="display text-[clamp(2.5rem,5vw,4.75rem)] text-burgundy" data-reveal="lines">{s.name[locale]}</h1>
           <p className="display mt-6 text-2xl italic text-gold-muted ml:not-italic" data-reveal="fade">{s.short[locale]}</p>
+          {s.showPrice && s.priceFrom > 0 && (
+            <p className="eyebrow mt-6 text-burgundy" data-reveal="fade">{fill(t.services.priceFrom, { price: formatPrice(s.priceFrom) })}</p>
+          )}
           <p className="mt-8 max-w-lg text-charcoal/85" data-reveal="fade" data-delay="0.1">{s.intro[locale]}</p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" data-reveal="fade" data-delay="0.2">
-            <WhatsAppButton text={serviceWaText(locale, s.name[locale])} label={t.cta.enquireService} />
+            <WhatsAppButton text={await serviceWaText(locale, s.name[locale])} label={t.cta.enquireService} />
             <CallLink label={t.cta.call} closedLabel={t.cta.callClosed} className={btn.outline} />
           </div>
         </div>

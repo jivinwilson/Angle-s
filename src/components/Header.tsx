@@ -4,17 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { href, swapLocale, type Locale } from "@/lib/i18n";
-import { waUrl } from "@/lib/contact";
-import { site } from "@content/site";
 import type { Copy } from "@content/copy";
 import { Wordmark } from "./Wordmark";
 import { InstagramIcon, WhatsAppIcon } from "./icons";
-import { CallLink } from "./CallLink";
+import { CallLink, useSite } from "./CallLink";
 import { btn } from "./ui";
 
-type Props = { locale: Locale; t: Pick<Copy, "nav" | "cta" | "language"> & { waText: string } };
+type Banner = { text: string; link: string; linkLabel: string } | null;
+type Props = { locale: Locale; t: Pick<Copy, "nav" | "cta" | "language"> & { waText: string }; instagram: { handle: string; url: string }; banner: Banner };
 
-export function Header({ locale, t }: Props) {
+export function Header({ locale, t, instagram, banner }: Props) {
+  const { wa } = useSite();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -51,6 +51,14 @@ export function Header({ locale, t }: Props) {
         open ? "bg-burgundy text-ivory" : light ? "text-ivory" : "bg-ivory/90 text-burgundy shadow-[0_1px_0_rgb(198_166_107/0.35)] backdrop-blur-md"
       }`}
     >
+      {banner && (
+        <div className="gutter flex min-h-9 items-center justify-center gap-3 bg-gold py-1.5 text-center text-[0.8125rem] text-burgundy-deep">
+          <p>{banner.text}</p>
+          {banner.link && (
+            <Link href={banner.link} className="shrink-0 font-medium underline underline-offset-4">{banner.linkLabel || "→"}</Link>
+          )}
+        </div>
+      )}
       <div className="gutter flex h-[4.5rem] items-center justify-between gap-6 md:h-20">
         <Link href={href(locale)} aria-label="Angel's — home" className="text-[0.95rem] md:text-[1.05rem]">
           <Wordmark />
@@ -68,11 +76,11 @@ export function Header({ locale, t }: Props) {
           <Link href={swapLocale(pathname, locale === "en" ? "ml" : "en")} lang={locale === "en" ? "ml" : "en"} hrefLang={locale === "en" ? "ml" : "en"} className="text-sm opacity-80 transition-opacity hover:opacity-100">
             {t.language}
           </Link>
-          <a href={site.instagram.url} target="_blank" rel="noopener" aria-label="Instagram" className="hidden opacity-80 transition-opacity hover:opacity-100 sm:block">
+          <a href={instagram.url} target="_blank" rel="noopener" aria-label="Instagram" className="hidden opacity-80 transition-opacity hover:opacity-100 sm:block">
             <InstagramIcon />
           </a>
           <div className="hidden lg:block">
-            <a href={waUrl(t.waText)} target="_blank" rel="noopener" data-track="whatsapp" className={`${light ? btn.ghostLight : btn.primary} !min-h-11`}>
+            <a href={wa(t.waText)} target="_blank" rel="noopener" data-track="whatsapp" className={`${light ? btn.ghostLight : btn.primary} !min-h-11`}>
               <WhatsAppIcon className="size-4" />
               {t.nav.enquire}
             </a>
@@ -94,7 +102,7 @@ export function Header({ locale, t }: Props) {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="gutter fixed inset-x-0 bottom-0 top-[4.5rem] flex flex-col justify-between overflow-y-auto bg-burgundy pb-10 pt-8 text-ivory md:top-20 lg:hidden"
+        className="gutter absolute inset-x-0 top-full flex h-[calc(100svh-100%)] flex-col justify-between overflow-y-auto bg-burgundy pb-10 pt-8 text-ivory lg:hidden"
       >
         <nav aria-label="Mobile">
           <ul className="space-y-1">
@@ -109,13 +117,13 @@ export function Header({ locale, t }: Props) {
           </ul>
         </nav>
         <div className="mt-10 grid gap-3">
-          <a href={waUrl(t.waText)} target="_blank" rel="noopener" data-track="whatsapp" className={btn.light}>
+          <a href={wa(t.waText)} target="_blank" rel="noopener" data-track="whatsapp" className={btn.light}>
             <WhatsAppIcon className="size-4" />
             {t.cta.whatsapp}
           </a>
           <CallLink label={t.cta.call} closedLabel={t.cta.callClosed} className={`${btn.ghostLight} text-center`} />
-          <a href={site.instagram.url} target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-2 text-sm opacity-80">
-            <InstagramIcon className="size-4" /> @{site.instagram.handle}
+          <a href={instagram.url} target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-2 text-sm opacity-80">
+            <InstagramIcon className="size-4" /> @{instagram.handle}
           </a>
         </div>
       </div>

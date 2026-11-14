@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { WhatsAppIcon } from "./icons";
-import { waUrl } from "@/lib/contact";
 
 const base =
   "group inline-flex min-h-12 items-center justify-center gap-3 px-7 text-[0.8125rem] font-medium tracking-[0.18em] uppercase transition-colors duration-300 ease-[var(--ease-silk)] ml:tracking-normal ml:text-sm";
@@ -12,15 +10,6 @@ export const btn = {
   light: `${base} bg-ivory text-burgundy hover:bg-beige`,
   ghostLight: `${base} border border-ivory/40 text-ivory hover:border-gold hover:text-gold`,
 };
-
-export function WhatsAppButton({ text, label, variant = "primary", className = "" }: { text: string; label: string; variant?: keyof typeof btn; className?: string }) {
-  return (
-    <a href={waUrl(text)} target="_blank" rel="noopener" className={`${btn[variant]} ${className}`} data-track="whatsapp">
-      <WhatsAppIcon className="size-[1.1rem]" />
-      {label}
-    </a>
-  );
-}
 
 export function SectionHead({ eyebrow, title, light, className = "", as: H = "h2" }: { eyebrow: string; title: string; light?: boolean; className?: string; as?: "h1" | "h2" }) {
   return (

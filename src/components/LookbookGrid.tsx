@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { waUrl, fill } from "@/lib/contact";
+import { fill } from "@/lib/contact";
+import { useSite } from "./CallLink";
 import { btn } from "./ui";
 import { WhatsAppIcon } from "./icons";
 
@@ -16,6 +17,7 @@ type Props = {
 
 export function LookbookGrid({ looks, categories, t }: Props) {
   const [filter, setFilter] = useState("all");
+  const { wa } = useSite();
   const [index, setIndex] = useState<number | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const shown = filter === "all" ? looks : looks.filter((l) => l.category === filter);
@@ -114,7 +116,7 @@ export function LookbookGrid({ looks, categories, t }: Props) {
             </div>
             <div className="flex flex-col items-center gap-3 px-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-4 text-center">
               <p className="max-w-xl text-sm opacity-80">{current.alt}</p>
-              <a href={waUrl(fill(t.waTemplate, { look: current.alt }))} target="_blank" rel="noopener" data-track="whatsapp-look" className={btn.light}>
+              <a href={wa(fill(t.waTemplate, { look: current.alt }))} target="_blank" rel="noopener" data-track="whatsapp-look" className={btn.light}>
                 <WhatsAppIcon className="size-4" />
                 {t.enquire}
               </a>

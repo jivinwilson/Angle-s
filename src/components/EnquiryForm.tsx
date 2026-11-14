@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { waUrl } from "@/lib/contact";
 import type { Copy } from "@content/copy";
 import { btn } from "./ui";
 import { WhatsAppIcon } from "./icons";
+import { useSite } from "./CallLink";
 
 type Props = {
   t: Copy["enquiry"];
@@ -17,6 +17,7 @@ type Props = {
 
 export function EnquiryForm({ t, wa, occasions, services, preset = "", light }: Props) {
   const [mode, setMode] = useState("");
+  const { wa: waLink } = useSite();
 
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -40,7 +41,13 @@ export function EnquiryForm({ t, wa, occasions, services, preset = "", light }: 
     ]
       .filter((l) => typeof l === "string" || l[1])
       .map((l) => (typeof l === "string" ? l : `${l[0]}: ${l[1]}`));
-    window.open(waUrl(lines.join("\n")), "_blank", "noopener");
+    fetch("/api/enquiries", {
+      method: "POST",
+      keepalive: true,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ name: v("name"), service: v("service"), occasion: v("occasion"), event_date: v("date"), place: v("place"), people: v("people"), mode, message: v("note") }),
+    }).catch(() => {});
+    window.open(waLink(lines.join("\n")), "_blank", "noopener");
   }
 
   const field = `peer w-full border-0 border-b bg-transparent px-0 pb-2 pt-6 text-base outline-none transition-colors placeholder:text-transparent focus:ring-0 ${

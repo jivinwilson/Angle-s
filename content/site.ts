@@ -1,12 +1,11 @@
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000");
+
 export const site = {
   name: "Angel's",
   legalName: "Angel's Beauty Parlour",
   tagline: { en: "Where Every Drape Becomes Elegance", ml: "ഓരോ ഞൊറിയും ചാരുതയാകുന്നിടം" },
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000"),
   phone: "+919446129996",
   phoneDisplay: "+91 94461 29996",
   whatsapp: "919446129996",

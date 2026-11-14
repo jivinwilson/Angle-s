@@ -15,9 +15,9 @@ export const copy = {
       learnMore: "Discover",
     },
     hero: {
-      eyebrow: "Bridal · Draping · Beauty — Nilambur, Kerala",
-      title: ["Every Drape", "Tells a Story."],
-      body: "Celebrate your special moments with timeless saree styling and elegant bridal draping by Angel's.",
+      eyebrow: "Bridal Makeup · Saree Draping — Nilambur, Kerala",
+      title: ["Bridal Beauty,", "Perfectly Draped."],
+      body: "Bridal makeup by Merlin Sanoj and saree draping by Vijisha — twenty-five years of Angel's Beauty Parlour, now for brides across Kerala.",
     },
     intro: {
       eyebrow: "Angel's Beauty Parlour · Manimooly",
@@ -29,17 +29,22 @@ export const copy = {
     },
     artistry: {
       eyebrow: "Our Artistry",
-      title: "A drape is not dressed. It is composed.",
+      title: "A bridal look is not done. It is composed.",
       steps: [
-        { title: "Consult", body: "We begin with your saree, your ceremony and how you want to feel. Fabric, jewellery, blouse and venue all shape the drape." },
-        { title: "Drape", body: "Pleat by pleat, the saree is set to your height and movement — border aligned, pallu balanced, pinned to last the day." },
+        { title: "Consult", body: "We begin with your ceremony, your saree and how you want to feel. Skin, jewellery, blouse and venue all shape the look." },
+        { title: "Makeup & Drape", body: "Makeup that lasts through tears and photographs, hair set to hold, then the saree draped pleat by pleat — border aligned, pallu balanced." },
         { title: "Reveal", body: "The moment you turn to the mirror. Everything sits right, nothing needs fixing, and you are free to enjoy your day." },
       ],
     },
     bridal: {
       eyebrow: "Bridal Styling",
-      title: "For the bride, every fold matters.",
+      title: "For the bride, every detail matters.",
       body: "Christian, Hindu or Muslim ceremony, Kanjeevaram or kasavu — we understand the traditions behind the drape and the hours a bride spends in it. Makeup, hair and saree come together as one look.",
+    },
+    makeup: {
+      eyebrow: "Bridal Makeup & Hair",
+      title: "Makeup that stays as beautiful as the moment.",
+      body: "Twenty-five years of bridal makeup for weddings and church functions — Merlin Sanoj creates looks that suit your skin, your saree and your light, from the first ritual to the last photograph.",
     },
     draping: { eyebrow: "Saree Draping", title: "The art of the drape" },
     occasions: {
@@ -58,11 +63,11 @@ export const copy = {
         { title: "Across Kerala", body: "Based in Nilambur, Malappuram, and available for genuine bookings anywhere in Kerala." },
       ],
     },
-    instagram: { eyebrow: "Instagram", title: "Follow the drape", follow: "Follow Angel's on Instagram" },
+    instagram: { eyebrow: "Instagram", title: "From the parlour", follow: "Follow Angel's on Instagram" },
     enquiry: {
       eyebrow: "Enquire",
       title: "Tell us about your day.",
-      body: "Share a few details and we will reply on WhatsApp with availability. Pricing is discussed personally, based on your requirements.",
+      body: "Share a few details and we will reply on WhatsApp with availability. The final price depends on your requirements.",
       name: "Name",
       service: "Service",
       servicePlaceholder: "Choose a service",
@@ -91,13 +96,14 @@ export const copy = {
     },
     services: {
       eyebrow: "Our Services",
-      title: "Every drape, for every occasion.",
-      body: "Bridal draping, traditional styles, occasion looks, makeup and hair — explore what we do, then enquire on WhatsApp for availability.",
+      title: "Makeup, hair and drape — for every occasion.",
+      body: "Bridal makeup and hair, bridal and traditional draping, occasion looks and more — explore what we do, then enquire on WhatsApp for availability.",
+      priceFrom: "Starting from {price}",
       included: "What's included",
       where: "Where",
       whereValue: "At Angel's Beauty Parlour, Manimooly, or at your home or venue — decided together after your enquiry.",
       goodToKnow: "Good to know",
-      goodToKnowValue: "Wedding dates fill early. Enquire as soon as your date is fixed. Pricing depends on your requirements and is shared personally on WhatsApp.",
+      goodToKnowValue: "Wedding dates fill early. Enquire as soon as your date is fixed. The final price depends on your requirements and is confirmed personally on WhatsApp.",
       related: "You may also like",
     },
     about: {
@@ -147,7 +153,7 @@ export const copy = {
     },
     occasionsList: ["Wedding", "Reception", "Engagement", "Church function", "Festival", "Photoshoot", "Other"],
     whatsapp: {
-      generic: "Hello Angel's! I visited your website and would like to enquire about your bridal and saree styling services. Could you please share the details and availability?",
+      generic: "Hello Angel's! I visited your website and would like to enquire about your bridal makeup and saree draping services. Could you please share the details and availability?",
       service: "Hello Angel's! I visited your website and would like to enquire about {service}. Could you please share the details and availability?",
       look: "Hello Angel's! I saw a look on your website Lookbook ({look}) and would like to enquire about a similar style. Could you please share the details and availability?",
       builderIntro: "Hello Angel's! I would like to enquire about a booking.",
@@ -174,9 +180,9 @@ export const copy = {
       learnMore: "കൂടുതൽ",
     },
     hero: {
-      eyebrow: "ബ്രൈഡൽ · ഡ്രേപ്പിംഗ് · ബ്യൂട്ടി — നിലമ്പൂർ, കേരളം",
-      title: ["ഓരോ ഞൊറിക്കും", "ഒരു കഥ പറയാനുണ്ട്."],
-      body: "നിങ്ങളുടെ വിശേഷ നിമിഷങ്ങൾ Angel's-ന്റെ കാലാതീതമായ സാരി സ്റ്റൈലിംഗിലൂടെയും ബ്രൈഡൽ ഡ്രേപ്പിംഗിലൂടെയും ആഘോഷിക്കൂ.",
+      eyebrow: "ബ്രൈഡൽ മേക്കപ്പ് · സാരി ഡ്രേപ്പിംഗ് — നിലമ്പൂർ, കേരളം",
+      title: ["വധുവിന്റെ സൗന്ദര്യം,", "ഭംഗിയുള്ള ഞൊറികളിൽ."],
+      body: "മെർലിൻ സനോജിന്റെ ബ്രൈഡൽ മേക്കപ്പും വിജിഷയുടെ സാരി ഡ്രേപ്പിംഗും — ഇരുപത്തഞ്ച് വർഷത്തെ ഏഞ്ചൽസ് ബ്യൂട്ടി പാർലർ, ഇപ്പോൾ കേരളമെമ്പാടുമുള്ള വധുക്കൾക്കായി.",
     },
     intro: {
       eyebrow: "ഏഞ്ചൽസ് ബ്യൂട്ടി പാർലർ · മണിമൂളി",
@@ -188,17 +194,22 @@ export const copy = {
     },
     artistry: {
       eyebrow: "ഞങ്ങളുടെ കല",
-      title: "ഒരു ഡ്രേപ്പ് വെറുതെ ഉടുക്കുന്നതല്ല. അത് രചിക്കുന്നതാണ്.",
+      title: "ഒരു ബ്രൈഡൽ ലുക്ക് വെറുതെ ഒരുക്കുന്നതല്ല. അത് രചിക്കുന്നതാണ്.",
       steps: [
-        { title: "സംസാരം", body: "നിങ്ങളുടെ സാരി, ചടങ്ങ്, നിങ്ങൾ എങ്ങനെ തോന്നണമെന്ന് ആഗ്രഹിക്കുന്നു — ഇവിടെ നിന്നാണ് തുടക്കം. തുണി, ആഭരണം, ബ്ലൗസ്, വേദി എല്ലാം ഡ്രേപ്പിനെ രൂപപ്പെടുത്തുന്നു." },
-        { title: "ഡ്രേപ്പ്", body: "ഞൊറി ഞൊറിയായി, നിങ്ങളുടെ ഉയരത്തിനും ചലനത്തിനും ഇണങ്ങും വിധം — കര ഒത്തുചേർന്ന്, പല്ലു സന്തുലിതമായി, ദിവസം മുഴുവൻ നിലനിൽക്കും വിധം ഉറപ്പിച്ച്." },
+        { title: "സംസാരം", body: "നിങ്ങളുടെ ചടങ്ങ്, സാരി, നിങ്ങൾ എങ്ങനെ തോന്നണമെന്ന് ആഗ്രഹിക്കുന്നു — ഇവിടെ നിന്നാണ് തുടക്കം. ചർമ്മം, ആഭരണം, ബ്ലൗസ്, വേദി എല്ലാം ലുക്കിനെ രൂപപ്പെടുത്തുന്നു." },
+        { title: "മേക്കപ്പ് & ഡ്രേപ്പ്", body: "കണ്ണീരിലും ഫോട്ടോകളിലും മായാത്ത മേക്കപ്പ്, ഉറച്ചുനിൽക്കുന്ന ഹെയർ, പിന്നെ ഞൊറി ഞൊറിയായി സാരി — കര ഒത്തുചേർന്ന്, പല്ലു സന്തുലിതമായി." },
         { title: "അനാവരണം", body: "കണ്ണാടിയിലേക്ക് തിരിയുന്ന ആ നിമിഷം. എല്ലാം ശരിയായി, ഒന്നും ശരിയാക്കേണ്ടതില്ല — നിങ്ങളുടെ ദിവസം ആസ്വദിക്കാം." },
       ],
     },
     bridal: {
       eyebrow: "ബ്രൈഡൽ സ്റ്റൈലിംഗ്",
-      title: "വധുവിന്, ഓരോ ഞൊറിയും പ്രധാനം.",
+      title: "വധുവിന്, ഓരോ വിശദാംശവും പ്രധാനം.",
       body: "ക്രിസ്ത്യൻ, ഹിന്ദു, മുസ്ലിം ചടങ്ങുകൾ, കാഞ്ചീപുരമോ കസവോ — ഡ്രേപ്പിന് പിന്നിലെ പാരമ്പര്യവും വധു അതിൽ ചെലവിടുന്ന മണിക്കൂറുകളും ഞങ്ങൾ മനസ്സിലാക്കുന്നു. മേക്കപ്പും ഹെയറും സാരിയും ഒരൊറ്റ ലുക്കായി ഒത്തുചേരുന്നു.",
+    },
+    makeup: {
+      eyebrow: "ബ്രൈഡൽ മേക്കപ്പ് & ഹെയർ",
+      title: "ആ നിമിഷം പോലെ മനോഹരമായി നിലനിൽക്കുന്ന മേക്കപ്പ്.",
+      body: "വിവാഹങ്ങൾക്കും പള്ളിച്ചടങ്ങുകൾക്കുമായി ഇരുപത്തഞ്ച് വർഷത്തെ ബ്രൈഡൽ മേക്കപ്പ് — നിങ്ങളുടെ ചർമ്മത്തിനും സാരിക്കും വെളിച്ചത്തിനും ഇണങ്ങുന്ന ലുക്കുകൾ മെർലിൻ സനോജ് ഒരുക്കുന്നു, ആദ്യ ചടങ്ങ് മുതൽ അവസാന ഫോട്ടോ വരെ.",
     },
     draping: { eyebrow: "സാരി ഡ്രേപ്പിംഗ്", title: "ഞൊറിയുടെ കല" },
     occasions: {
@@ -221,7 +232,7 @@ export const copy = {
     enquiry: {
       eyebrow: "അന്വേഷണം",
       title: "നിങ്ങളുടെ ദിവസത്തെക്കുറിച്ച് പറയൂ.",
-      body: "കുറച്ച് വിവരങ്ങൾ പങ്കുവെക്കൂ, ലഭ്യത ഞങ്ങൾ വാട്സ്ആപ്പിൽ അറിയിക്കാം. നിരക്കുകൾ നിങ്ങളുടെ ആവശ്യങ്ങൾക്കനുസരിച്ച് നേരിട്ട് സംസാരിക്കാം.",
+      body: "കുറച്ച് വിവരങ്ങൾ പങ്കുവെക്കൂ, ലഭ്യത ഞങ്ങൾ വാട്സ്ആപ്പിൽ അറിയിക്കാം. അന്തിമ നിരക്ക് നിങ്ങളുടെ ആവശ്യങ്ങൾക്കനുസരിച്ചാണ്.",
       name: "പേര്",
       service: "സേവനം",
       servicePlaceholder: "ഒരു സേവനം തിരഞ്ഞെടുക്കുക",
@@ -250,13 +261,14 @@ export const copy = {
     },
     services: {
       eyebrow: "ഞങ്ങളുടെ സേവനങ്ങൾ",
-      title: "ഓരോ അവസരത്തിനും ഓരോ ഡ്രേപ്പ്.",
-      body: "ബ്രൈഡൽ ഡ്രേപ്പിംഗ്, പരമ്പരാഗത സ്റ്റൈലുകൾ, ആഘോഷ ലുക്കുകൾ, മേക്കപ്പ്, ഹെയർ — ഞങ്ങൾ ചെയ്യുന്നത് കാണൂ, ലഭ്യതയ്ക്കായി വാട്സ്ആപ്പിൽ അന്വേഷിക്കൂ.",
+      title: "മേക്കപ്പ്, ഹെയർ, ഡ്രേപ്പ് — ഓരോ അവസരത്തിനും.",
+      body: "ബ്രൈഡൽ മേക്കപ്പും ഹെയറും, ബ്രൈഡൽ-പരമ്പരാഗത ഡ്രേപ്പിംഗ്, ആഘോഷ ലുക്കുകൾ — ഞങ്ങൾ ചെയ്യുന്നത് കാണൂ, ലഭ്യതയ്ക്കായി വാട്സ്ആപ്പിൽ അന്വേഷിക്കൂ.",
+      priceFrom: "{price} മുതൽ",
       included: "ഉൾപ്പെടുന്നവ",
       where: "എവിടെ",
       whereValue: "മണിമൂളിയിലെ ഏഞ്ചൽസ് ബ്യൂട്ടി പാർലറിൽ, അല്ലെങ്കിൽ നിങ്ങളുടെ വീട്ടിലോ വേദിയിലോ — അന്വേഷണത്തിന് ശേഷം ഒരുമിച്ച് തീരുമാനിക്കാം.",
       goodToKnow: "അറിഞ്ഞിരിക്കാൻ",
-      goodToKnowValue: "വിവാഹ തീയതികൾ നേരത്തെ ബുക്ക് ആകും. തീയതി ഉറപ്പിച്ചാലുടൻ അന്വേഷിക്കൂ. നിരക്കുകൾ ആവശ്യങ്ങൾക്കനുസരിച്ച് വാട്സ്ആപ്പിൽ നേരിട്ട് അറിയിക്കും.",
+      goodToKnowValue: "വിവാഹ തീയതികൾ നേരത്തെ ബുക്ക് ആകും. തീയതി ഉറപ്പിച്ചാലുടൻ അന്വേഷിക്കൂ. അന്തിമ നിരക്ക് ആവശ്യങ്ങൾക്കനുസരിച്ച് വാട്സ്ആപ്പിൽ നേരിട്ട് ഉറപ്പിക്കും.",
       related: "ഇവയും ഇഷ്ടപ്പെട്ടേക്കാം",
     },
     about: {
@@ -306,7 +318,7 @@ export const copy = {
     },
     occasionsList: ["വിവാഹം", "റിസപ്ഷൻ", "നിശ്ചയം", "പള്ളിച്ചടങ്ങ്", "ഉത്സവം", "ഫോട്ടോഷൂട്ട്", "മറ്റുള്ളവ"],
     whatsapp: {
-      generic: "നമസ്കാരം Angel's! നിങ്ങളുടെ വെബ്സൈറ്റ് കണ്ടു. ബ്രൈഡൽ, സാരി സ്റ്റൈലിംഗ് സേവനങ്ങളെക്കുറിച്ച് അറിയാൻ ആഗ്രഹിക്കുന്നു. വിശദാംശങ്ങളും ലഭ്യതയും അറിയിക്കാമോ?",
+      generic: "നമസ്കാരം Angel's! നിങ്ങളുടെ വെബ്സൈറ്റ് കണ്ടു. ബ്രൈഡൽ മേക്കപ്പ്, സാരി ഡ്രേപ്പിംഗ് സേവനങ്ങളെക്കുറിച്ച് അറിയാൻ ആഗ്രഹിക്കുന്നു. വിശദാംശങ്ങളും ലഭ്യതയും അറിയിക്കാമോ?",
       service: "നമസ്കാരം Angel's! നിങ്ങളുടെ വെബ്സൈറ്റ് കണ്ടു. {service} സംബന്ധിച്ച് അറിയാൻ ആഗ്രഹിക്കുന്നു. വിശദാംശങ്ങളും ലഭ്യതയും അറിയിക്കാമോ?",
       look: "നമസ്കാരം Angel's! നിങ്ങളുടെ വെബ്സൈറ്റിലെ ലുക്ക്ബുക്കിൽ ഒരു ലുക്ക് ({look}) കണ്ടു. സമാനമായ സ്റ്റൈലിനെക്കുറിച്ച് അറിയാൻ ആഗ്രഹിക്കുന്നു. വിശദാംശങ്ങളും ലഭ്യതയും അറിയിക്കാമോ?",
       builderIntro: "നമസ്കാരം Angel's! ഒരു ബുക്കിംഗിനെക്കുറിച്ച് അന്വേഷിക്കാൻ ആഗ്രഹിക്കുന്നു.",
@@ -320,3 +332,4 @@ export const copy = {
 };
 
 export type Copy = (typeof copy)["en"];
+export type CopyDoc = typeof copy;

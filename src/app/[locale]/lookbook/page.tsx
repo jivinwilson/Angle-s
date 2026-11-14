@@ -1,28 +1,23 @@
 import type { Metadata } from "next";
 import { href, type Locale } from "@/lib/i18n";
-import { pageMeta } from "@/lib/seo";
-import { asset } from "@/lib/assets";
-import { copy } from "@content/copy";
-import { lookbook, lookCategories, type LookCategory } from "@content/lookbook";
+import { pageSeo } from "@/lib/seo";
+import { getContent } from "@/lib/content";
+import { lookCategories, type LookCategory } from "@content/lookbook";
 import { Breadcrumbs, PageIntro } from "@/components/page";
 import { LookbookGrid } from "@/components/LookbookGrid";
 import { Enquiry } from "@/components/home";
 
-const meta = {
-  en: { title: "Lookbook — Bridal Saree & Kerala Styling Inspiration", description: "Styling inspiration for Kanjeevaram bridal sarees, Kerala kasavu, reception looks, bridal makeup and hair. Share a look with Angel's on WhatsApp." },
-  ml: { title: "ലുക്ക്ബുക്ക് — ബ്രൈഡൽ സാരി, കേരള സ്റ്റൈലിംഗ് പ്രചോദനം", description: "കാഞ്ചീപുരം ബ്രൈഡൽ സാരി, കേരള കസവ്, റിസപ്ഷൻ ലുക്കുകൾ, ബ്രൈഡൽ മേക്കപ്പ്, ഹെയർ — സ്റ്റൈലിംഗ് പ്രചോദനം." },
-};
-
 export async function generateMetadata({ params }: PageProps<"/[locale]/lookbook">): Promise<Metadata> {
   const locale = (await params).locale as Locale;
-  return pageMeta(locale, "/lookbook", meta[locale].title, meta[locale].description, "svc-kanjeevaram-bridal");
+  return pageSeo(locale, "lookbook", "/lookbook");
 }
 
 export default async function Lookbook({ params }: PageProps<"/[locale]/lookbook">) {
   const locale = (await params).locale as Locale;
-  const t = copy[locale];
-  const looks = lookbook.map(({ id, category }) => {
-    const a = asset(id);
+  const c = await getContent();
+  const t = c.t(locale);
+  const looks = c.lookbook.items.map(({ image: id, category }) => {
+    const a = c.asset(id);
     return { id, category, src: a.src, width: a.width, height: a.height, blur: a.blur, alt: a.alt[locale] };
   });
   const categories = (Object.keys(lookCategories) as LookCategory[])

@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { href, locales } from "@/lib/i18n";
 import { abs } from "@/lib/seo";
-import { visibleServices } from "@content/services";
+import { getContent } from "@/lib/content";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const { visibleServices } = await getContent();
   const paths = ["/", "/services", "/lookbook", "/about", "/contact", ...visibleServices.map((s) => `/services/${s.slug}`)];
   return paths.flatMap((path) =>
     locales.map((locale) => ({

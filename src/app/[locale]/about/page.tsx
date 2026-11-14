@@ -1,25 +1,20 @@
 import type { Metadata } from "next";
 import { href, type Locale } from "@/lib/i18n";
-import { pageMeta } from "@/lib/seo";
-import { copy } from "@content/copy";
+import { pageSeo } from "@/lib/seo";
+import { getContent } from "@/lib/content";
 import { Photo } from "@/components/Photo";
 import { Breadcrumbs, PageIntro } from "@/components/page";
 import { Enquiry } from "@/components/home";
 import { Thread } from "@/components/ui";
 
-const meta = {
-  en: { title: "About — 25 Years of Bridal Styling in Nilambur", description: "Angel's grew from Angel's Beauty Parlour in Manimooly, Nilambur, founded by Merlin Sanoj — 25 years of bridal makeup and saree draping for weddings and church functions." },
-  ml: { title: "ഞങ്ങളെക്കുറിച്ച് — നിലമ്പൂരിൽ 25 വർഷത്തെ ബ്രൈഡൽ സ്റ്റൈലിംഗ്", description: "മെർലിൻ സനോജ് സ്ഥാപിച്ച മണിമൂളിയിലെ ഏഞ്ചൽസ് ബ്യൂട്ടി പാർലറിൽ നിന്ന് — 25 വർഷത്തെ ബ്രൈഡൽ മേക്കപ്പും സാരി ഡ്രേപ്പിംഗും." },
-};
-
 export async function generateMetadata({ params }: PageProps<"/[locale]/about">): Promise<Metadata> {
   const locale = (await params).locale as Locale;
-  return pageMeta(locale, "/about", meta[locale].title, meta[locale].description, "artistry-consult");
+  return pageSeo(locale, "about", "/about");
 }
 
 export default async function About({ params }: PageProps<"/[locale]/about">) {
   const locale = (await params).locale as Locale;
-  const t = copy[locale];
+  const t = (await getContent()).t(locale);
   const a = t.about;
 
   return (

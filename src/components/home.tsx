@@ -1,24 +1,21 @@
 import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { href, type Locale } from "@/lib/i18n";
-import { asset } from "@/lib/assets";
+import { getContent } from "@/lib/content";
 import { fill } from "@/lib/contact";
-import { copy } from "@content/copy";
-import { site } from "@content/site";
-import { getService, visibleServices } from "@content/services";
-import { instagramTiles, testimonials } from "@content/lookbook";
 import { Photo } from "./Photo";
 import { SilkCanvas } from "./hero/SilkCanvas";
 import { EnquiryForm } from "./EnquiryForm";
-import { CallLink } from "./CallLink";
+import { CallLink, WhatsAppButton } from "./CallLink";
 import { InstagramIcon } from "./icons";
-import { SectionHead, TextLink, Thread, WhatsAppButton, btn } from "./ui";
+import { SectionHead, TextLink, Thread, btn } from "./ui";
 
 type P = { locale: Locale };
 
-function HeroImage({ locale }: P) {
-  const d = asset("hero-desktop");
-  const m = asset("hero-mobile");
+async function HeroImage({ locale }: P) {
+  const c = await getContent();
+  const d = c.asset("hero-desktop");
+  const m = c.asset("hero-mobile");
   if (!d.src || !m.src) return <Photo id="hero-desktop" locale={locale} sizes="100vw" priority className="absolute inset-0" />;
   const common = { alt: d.alt[locale], quality: 85, fetchPriority: "high", fill: true } as const;
   const { props: { srcSet: desktop } } = getImageProps({ ...common, src: d.src, sizes: "60vw" });
@@ -32,9 +29,10 @@ function HeroImage({ locale }: P) {
   );
 }
 
-export function Hero({ locale }: P) {
-  const t = copy[locale];
-  const poster = asset("hero-silk-poster");
+export async function Hero({ locale }: P) {
+  const c = await getContent();
+  const t = c.t(locale);
+  const poster = c.asset("hero-silk-poster");
   return (
     <section className="relative isolate flex min-h-svh flex-col overflow-hidden bg-burgundy-deep text-ivory md:flex-row">
       <div aria-hidden className="absolute inset-0 -z-10">
@@ -67,8 +65,9 @@ export function Hero({ locale }: P) {
   );
 }
 
-export function Intro({ locale }: P) {
-  const t = copy[locale].intro;
+export async function Intro({ locale }: P) {
+  const c = await getContent();
+  const t = c.t(locale).intro;
   return (
     <section className="gutter grid gap-14 py-28 md:grid-cols-12 md:gap-10 md:py-40">
       <div className="md:col-span-7 md:pr-10">
@@ -79,7 +78,7 @@ export function Intro({ locale }: P) {
           ))}
         </div>
         <div className="mt-10" data-reveal="fade">
-          <TextLink href={href(locale, "/about")}>{copy[locale].nav.about}</TextLink>
+          <TextLink href={href(locale, "/about")}>{c.t(locale).nav.about}</TextLink>
         </div>
       </div>
       <div className="relative md:col-span-5">
@@ -87,15 +86,15 @@ export function Intro({ locale }: P) {
           <Photo id="intro-pleats" locale={locale} sizes="(min-width:768px) 40vw, 100vw" className="absolute inset-0" />
         </div>
         <p className="display absolute -bottom-8 -left-4 text-[8rem] leading-none text-gold/70 md:-left-16 md:text-[11rem]" data-parallax="20" aria-hidden>
-          {site.years}
+          {c.site.years}
         </p>
       </div>
     </section>
   );
 }
 
-export function Artistry({ locale }: P) {
-  const t = copy[locale].artistry;
+export async function Artistry({ locale }: P) {
+  const t = (await getContent()).t(locale).artistry;
   const imgs = ["artistry-consult", "artistry-drape", "artistry-reveal"];
   return (
     <section data-pin="artistry" className="relative bg-beige lg:h-svh">
@@ -129,9 +128,10 @@ export function Artistry({ locale }: P) {
   );
 }
 
-export function Bridal({ locale }: P) {
-  const t = copy[locale];
-  const links = ["christian-bridal-saree-draping", "hindu-bridal-draping", "muslim-bridal-draping", "kanjeevaram-bridal-draping", "bridal-makeup"].map((s) => getService(s)!);
+export async function Bridal({ locale }: P) {
+  const c = await getContent();
+  const t = c.t(locale);
+  const links = c.visibleServices.filter((s) => s.group === "bridal");
   return (
     <section className="grid md:grid-cols-12">
       <div className="relative min-h-[80svh] md:col-span-7">
@@ -157,9 +157,39 @@ export function Bridal({ locale }: P) {
   );
 }
 
-export function DrapingRail({ locale }: P) {
-  const t = copy[locale];
-  const list = visibleServices.filter((s) => ["traditional", "bridal", "preparation", "bespoke"].includes(s.group));
+export async function Makeup({ locale }: P) {
+  const c = await getContent();
+  const t = c.t(locale);
+  const list = c.visibleServices.filter((s) => s.group === "beauty");
+  return (
+    <section className="grid bg-beige md:grid-cols-12">
+      <div className="gutter order-2 flex flex-col justify-center py-20 md:order-1 md:col-span-5 md:py-28">
+        <SectionHead eyebrow={t.makeup.eyebrow} title={t.makeup.title} />
+        <p className="mt-8 max-w-md text-charcoal/80" data-reveal="fade">{t.makeup.body}</p>
+        <ul className="mt-10 border-t border-gold/40" data-reveal="stagger">
+          {list.map((s) => (
+            <li key={s.slug} className="border-b border-gold/40">
+              <Link href={href(locale, `/services/${s.slug}`)} className="group flex items-center justify-between py-4 text-lg transition-colors hover:text-burgundy">
+                <span className="display text-2xl">{s.name[locale]}</span>
+                <span className="text-gold-muted transition-transform duration-500 group-hover:translate-x-1">→</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="relative order-1 min-h-[80svh] md:order-2 md:col-span-7">
+        <div data-reveal="img" className="absolute inset-0 overflow-hidden">
+          <Photo id="svc-bridal-makeup" locale={locale} sizes="(min-width:768px) 58vw, 100vw" className="absolute inset-0" position="center 30%" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export async function DrapingRail({ locale }: P) {
+  const c = await getContent();
+  const t = c.t(locale);
+  const list = c.visibleServices.filter((s) => ["traditional", "bridal", "preparation", "bespoke"].includes(s.group));
   return (
     <section data-rail className="overflow-hidden py-24 lg:flex lg:h-svh lg:flex-col lg:justify-center lg:py-0">
       <div className="gutter flex items-end justify-between gap-6">
@@ -193,9 +223,10 @@ export function DrapingRail({ locale }: P) {
   );
 }
 
-export function Occasions({ locale }: P) {
-  const t = copy[locale];
-  const list = visibleServices.filter((s) => s.group === "occasion");
+export async function Occasions({ locale }: P) {
+  const c = await getContent();
+  const t = c.t(locale);
+  const list = c.visibleServices.filter((s) => s.group === "occasion");
   return (
     <section className="relative overflow-hidden bg-burgundy text-ivory">
       <div className="gutter grid gap-14 py-28 md:grid-cols-12 md:py-40">
@@ -223,8 +254,8 @@ export function Occasions({ locale }: P) {
   );
 }
 
-export function LookbookPreview({ locale }: P) {
-  const t = copy[locale];
+export async function LookbookPreview({ locale }: P) {
+  const t = (await getContent()).t(locale);
   const ids = ["svc-kanjeevaram-bridal", "lookbook-02", "insta-05", "svc-bridal-package", "insta-02"];
   const layout = [
     "col-span-2 row-span-2 md:col-span-5 md:row-span-2",
@@ -253,8 +284,8 @@ export function LookbookPreview({ locale }: P) {
   );
 }
 
-export function Why({ locale }: P) {
-  const t = copy[locale].why;
+export async function Why({ locale }: P) {
+  const t = (await getContent()).t(locale).why;
   return (
     <section className="bg-beige">
       <div className="gutter grid gap-16 py-28 md:grid-cols-12 md:py-40">
@@ -283,7 +314,8 @@ export function Why({ locale }: P) {
   );
 }
 
-export function Testimonials({ locale }: P) {
+export async function Testimonials({ locale }: P) {
+  const { testimonials } = (await getContent()).lookbook;
   if (!testimonials.length) return null;
   return (
     <section className="gutter py-28 text-center">
@@ -297,8 +329,10 @@ export function Testimonials({ locale }: P) {
   );
 }
 
-export function Instagram({ locale }: P) {
-  const t = copy[locale].instagram;
+export async function Instagram({ locale }: P) {
+  const c = await getContent();
+  const { site } = c;
+  const t = c.t(locale).instagram;
   return (
     <section className="gutter pb-28 pt-4 md:pb-40">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -308,9 +342,9 @@ export function Instagram({ locale }: P) {
         </a>
       </div>
       <ul className="mt-12 grid grid-cols-3 gap-2 md:grid-cols-6 md:gap-4" data-reveal="stagger">
-        {instagramTiles.map((id) => (
+        {c.lookbook.instagram.map((id) => (
           <li key={id}>
-            <a href={site.instagram.url} target="_blank" rel="noopener" aria-label={`${t.follow} — ${asset(id).alt[locale]}`} className="group relative block aspect-square overflow-hidden">
+            <a href={site.instagram.url} target="_blank" rel="noopener" aria-label={`${t.follow} — ${c.asset(id).alt[locale]}`} className="group relative block aspect-square overflow-hidden">
               <Photo id={id} locale={locale} sizes="(min-width:768px) 16vw, 33vw" className="absolute inset-0" imgClassName="transition-transform duration-700 group-hover:scale-105" />
               <span className="absolute inset-0 grid place-items-center bg-burgundy/0 text-ivory opacity-0 transition-all duration-500 group-hover:bg-burgundy/40 group-hover:opacity-100">
                 <InstagramIcon className="size-6" />
@@ -323,8 +357,9 @@ export function Instagram({ locale }: P) {
   );
 }
 
-export function Enquiry({ locale, preset }: P & { preset?: string }) {
-  const t = copy[locale];
+export async function Enquiry({ locale, preset }: P & { preset?: string }) {
+  const c = await getContent();
+  const t = c.t(locale);
   return (
     <section id="enquire" className="relative isolate overflow-hidden bg-burgundy-deep text-ivory">
       <div aria-hidden className="absolute inset-0 -z-10 opacity-25">
@@ -335,7 +370,7 @@ export function Enquiry({ locale, preset }: P & { preset?: string }) {
           <SectionHead eyebrow={t.enquiry.eyebrow} title={t.enquiry.title} light />
           <p className="mt-8 max-w-sm text-ivory/75" data-reveal="fade">{t.enquiry.body}</p>
           <div className="mt-10 space-y-2 text-sm text-ivory/70" data-reveal="fade">
-            <CallLink label={`${t.cta.call} · ${site.phoneDisplay}`} closedLabel={t.cta.callClosed} className="inline-flex items-center gap-2 text-base text-ivory underline decoration-gold/50 underline-offset-4 hover:decoration-gold" />
+            <CallLink label={`${t.cta.call} · ${c.site.phoneDisplay}`} closedLabel={t.cta.callClosed} className="inline-flex items-center gap-2 text-base text-ivory underline decoration-gold/50 underline-offset-4 hover:decoration-gold" />
           </div>
         </div>
         <div className="md:col-span-6 md:col-start-7" data-reveal="fade">
@@ -343,7 +378,7 @@ export function Enquiry({ locale, preset }: P & { preset?: string }) {
             t={t.enquiry}
             wa={t.whatsapp}
             occasions={t.occasionsList}
-            services={visibleServices.map((s) => ({ slug: s.slug, name: s.name[locale] }))}
+            services={c.visibleServices.map((s) => ({ slug: s.slug, name: s.name[locale] }))}
             preset={preset}
             light
           />
@@ -353,4 +388,4 @@ export function Enquiry({ locale, preset }: P & { preset?: string }) {
   );
 }
 
-export const serviceWaText = (locale: Locale, name: string) => fill(copy[locale].whatsapp.service, { service: name });
+export const serviceWaText = async (locale: Locale, name: string) => fill((await getContent()).t(locale).whatsapp.service, { service: name });
